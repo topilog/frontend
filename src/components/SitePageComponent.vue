@@ -34,20 +34,6 @@ export default {
 </script>
 
 <style>
-body {
-    background-color: #f6f6f6;
-    font-size: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: aquamarine;
-}
-
 #header {
     width: 100%;
     background: #ffffff;
@@ -76,15 +62,6 @@ a:hover {
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
-}
-
-.Card {
-    background: #ffffff;
-}
-
-.MainColumnCard {
-    box-shadow: none;
-    border-bottom: 1px solid #f0f2f7;
 }
 
 #main-div {
