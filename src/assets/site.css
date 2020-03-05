@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+}
 body {
     background-color: #f6f6f6;
     font-size: 15px;
+    height: 100%;
+    overflow: hidden;
 }
 
 a {
