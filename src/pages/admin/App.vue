@@ -9,10 +9,19 @@
                             <template slot="title">
                                 <span>{{menu.title}}</span>
                             </template>
-                            <el-menu-item v-for="(item, iIndex) in menu.items" :key="iIndex" 
-                                :index="mIndex+'-'+iIndex">
+                            <div v-for="(item, iIndex) in menu.items" :key="iIndex">
+                                <el-menu-item-group v-if="item.items">
+                                    <template slot="title">{{item.title}}</template>
+                                    <el-menu-item v-for="(innerItem, innerIndex) in item.items" :key="innerIndex"
+                                        :index="mIndex+'-'+iIndex+'-'+innerIndex">
+                                        {{innerItem.title}}
+                                    </el-menu-item>
+                                </el-menu-item-group>
+                                <el-menu-item v-else :index="mIndex+'-'+iIndex">
                                 {{item.title}}
-                            </el-menu-item>
+                                </el-menu-item>
+                            </div>
+                            
                         </el-submenu>
                     </el-menu>
                 </el-aside>
@@ -49,6 +58,22 @@ export default {
                     },{
                         title: '文章统计',
                         url: 'article/statistics'
+                    }]
+                }, {
+                    title: '用户',
+                    items: [{
+                        /* 再嵌套一层items，渲染时将产生一个menu-item-group */
+                        title: '权限',
+                        items: [{
+                            title: '权限与角色',
+                            url: 'user/permissionAndRole'
+                        }, {
+                            title: '用户权限',
+                            url: 'user/userPermission'
+                        }]
+                    }, {
+                       title: '用户管理',
+                       url: 'user/list' 
                     }]
                 }
             ]
