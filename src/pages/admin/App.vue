@@ -1,10 +1,10 @@
 <template>
     <div id="app" class="container">
         <el-container class="container">
-            <el-header height="50px"><span>Topilog 后台</span></el-header>
+            <el-header class="header" height="50px"><span>Topilog 后台</span></el-header>
             <el-container>
-                <el-aside id="sideNav" class="container" width="300px">
-                    <el-menu>
+                <el-aside id="sideBar" class="container" width="300px">
+                    <el-menu id="sideNav" background-color="#333" text-color="#bbb" router>
                         <el-submenu v-for="(menu, mIndex) in Menus" :key="mIndex" :index="mIndex.toString()">
                             <template slot="title">
                                 <span>{{menu.title}}</span>
@@ -13,11 +13,11 @@
                                 <el-menu-item-group v-if="item.items">
                                     <template slot="title">{{item.title}}</template>
                                     <el-menu-item v-for="(innerItem, innerIndex) in item.items" :key="innerIndex"
-                                        :index="mIndex+'-'+iIndex+'-'+innerIndex">
+                                        :index="innerItem.url">
                                         {{innerItem.title}}
                                     </el-menu-item>
                                 </el-menu-item-group>
-                                <el-menu-item v-else :index="mIndex+'-'+iIndex">
+                                <el-menu-item v-else :index="item.url">
                                 {{item.title}}
                                 </el-menu-item>
                             </div>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import * as url from './router/url'
 export default {
     name: 'App',
     components:{
@@ -45,19 +46,19 @@ export default {
                     title: '网站',
                     items: [{
                         title: '网站设置',
-                        url: 'site/config'
+                        url: url.kUrl_site_admin
                     }, {
                         title: '站点统计',
-                        url: 'site/statistics'
+                        url: url.kUrl_site_statistics
                     }]
                 }, {
                     title: '文章',
                     items: [{
                         title: '文章管理',
-                        url: 'article/list',
+                        url: url.kUrl_article_admin
                     },{
                         title: '文章统计',
-                        url: 'article/statistics'
+                        url: url.kUrl_article_statistics
                     }]
                 }, {
                     title: '用户',
@@ -66,14 +67,14 @@ export default {
                         title: '权限',
                         items: [{
                             title: '权限与角色',
-                            url: 'user/permissionAndRole'
+                            url: url.kUrl_user_permissionAndRole
                         }, {
                             title: '用户权限',
-                            url: 'user/userPermission'
+                            url: url.kUrl_user_permissions
                         }]
                     }, {
                        title: '用户管理',
-                       url: 'user/list' 
+                       url: url.kUrl_user_admin
                     }]
                 }
             ]
@@ -83,6 +84,25 @@ export default {
 </script>
 <style>
 .container {
+    height: 100%;
+}
+
+.header {
+    background: #262F3E;
+    color: #fff;
+}
+
+#sideBar {
+    display: block;
+    position: absolute; 
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    background: #333;
+    color: #bbb;
+}
+
+#sideNav {
     height: 100%;
 }
 </style>
