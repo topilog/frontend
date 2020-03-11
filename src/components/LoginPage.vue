@@ -1,9 +1,7 @@
 <template>
-<div>
     <div id="page">
         <Login/>
     </div>
-</div>
 </template>
 
 <script>
@@ -18,9 +16,11 @@ export default {
 </script>
 
 <style>
-    body{
-        background-image: url(../pic/timg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover; /* 重点二 */
-    }
+#page {
+    width: 100%;
+    height: 100%;
+    background-image: url(../pic/timg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* 重点二 */
+}
 </style>
