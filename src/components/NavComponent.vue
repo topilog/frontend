@@ -19,7 +19,7 @@ export default {
         }
     },
     mounted: function () {
-    this.$axios.get(this.$url + '/api/nav').then( (res)=> {
+    this.$axios.get('/api/nav').then( (res)=> {
         this.items = res.data.resp
     })
     }

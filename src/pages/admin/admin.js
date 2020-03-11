@@ -9,7 +9,6 @@ import App from './App'
 import Axios from 'axios'
 Vue.use(ElementUI);
 Vue.prototype.$axios = Axios
-Vue.prototype.$url = "http://localhost:8080"
 
 Vue.config.productionTip = false
 

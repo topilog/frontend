@@ -26,7 +26,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.get(this.$url + '/api/article/article', {
+        this.$axios.get('/api/article/article', {
             params: {
                 articleId: this.$route.params.id
             }

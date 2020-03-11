@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.get(this.$url + '/api/article/infos').then((res) => {
+        this.$axios.get('/api/article/infos').then((res) => {
             this.articleInfos = res.data.resp
         })
     }

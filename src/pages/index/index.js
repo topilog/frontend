@@ -6,8 +6,6 @@ import router from './router'
 import Axios from 'axios'
 import '@/assets/site.css' /* 引入公共样式 */
 Vue.prototype.$axios = Axios
-// Vue.prototype.$url = "http://localhost:8080"
-Vue.prototype.$url = "http://test.styxs.cn:8081"
 
 Vue.config.productionTip = false
 
