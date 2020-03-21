@@ -13,15 +13,10 @@
 <script>
 export default {
     name:"NavComponent",
-    data(){
-        return{
-            items:{}
+    computed: {
+        items() {
+            return this.$store.state.commonInfo.navItems
         }
-    },
-    mounted: function () {
-    this.$axios.get('/api/nav').then( (res)=> {
-        this.items = res.data.resp
-    })
     }
 }
 
