@@ -26,7 +26,7 @@
                     </el-menu>
                 </el-aside>
                 <el-main>
-                    <router-view></router-view>
+                    <router-view id="main"></router-view>
                 </el-main>
             </el-container>
         </el-container>
@@ -54,9 +54,12 @@ export default {
                 }, {
                     title: '文章',
                     items: [{
+                        title: '提交文章',
+                        url: url.kUrl_article_post
+                    }, {
                         title: '文章管理',
                         url: url.kUrl_article_admin
-                    },{
+                    }, {
                         title: '文章统计',
                         url: url.kUrl_article_statistics
                     }]
@@ -104,5 +107,14 @@ export default {
 
 #sideNav {
     height: 100%;
+}
+
+#main {
+    display: block;
+    position: absolute;
+    left: 300px;
+    right: 0;
+    top: 50px;
+    bottom: 0;
 }
 </style>
