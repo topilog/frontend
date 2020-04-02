@@ -1,28 +1,25 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import api from '@/api'
 
-Vue.use(Vuex)
-export default new Vuex.Store({
+export default {
     state: {
-        commonInfo: {
-            siteName: String,
-            navItems: Array,
-            copyright: String,
-        }
+        siteName: String,
+        navItems: Array,
+        copyright: String,
     },
     mutations: {
         setCommonInfo(state, commonInfo) {
-            state.commonInfo = {...commonInfo}
+            state.siteName = commonInfo.siteName
+            state.navItems = commonInfo.navItems
+            state.copyright = commonInfo.copyright
             // 在这里更新一下名字
             var l = document.title.search('-')
             l = l === -1 ? 0 : l
             var metaName = document.title.substr(l).trim()
             var name
             if (l === 0 || metaName.length === 0) 
-                name = state.commonInfo.siteName
+                name = state.siteName
             else 
-                name = state.commonInfo.siteName + ' - ' + metaName
+                name = state.siteName + ' - ' + metaName
             document.title = name
         }
     }, 
@@ -33,4 +30,4 @@ export default new Vuex.Store({
             })
         }
     }
-})
+}
