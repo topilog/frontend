@@ -1,20 +1,20 @@
 <template>
 <div>
-<header id="header">
-    <NavComponent/>
-</header>
-<div id="container">
-    <main id="main">
-        <div id="main-div">
+    <header class="header">
+        <div class="Container">
+            <NavComponent/>
+        </div>
+    </header>
+<div class="Container">
+    <main class="row">
+        <div class="MainColumn">
             <slot name="main-slot"></slot>
         </div>
-        <div id="side-div">
-            <div layout:fragment="side-content">
-                <slot name="side-slot"></slot>
-            </div>
+        <div class="SideColumn">
+            <slot name="side-slot"></slot>
             <footer id="footer">
-                <p th:utext="${siteCopyright}">Copyright&copy;2020 StyxS</p>
-                <p>Powered by <a href="https://github.com/Styx-S">StyxS</a>, <a href="https://github.com/NaHCO3">NaHCO3</a></p>
+                <span th:utext="${siteCopyright}">Copyright&copy;2020 StyxS</span><br>
+                <span>Powered by </span><a href="https://github.com/topilog">Topilog</a>
             </footer>
         </div>
     </main>
@@ -33,46 +33,16 @@ export default {
     
 </script>
 
-<style>
-#header {
+<style scoped>
+.header {
     width: 100%;
-    background: #ffffff;
+    background: var(--foreground-bg-color);
     z-index: 100;
     position: relative;
 }
-#header #nav ul{
-    width: 1000px;
-    height: 52px;
-    margin: 10px auto;
+.row {
     display: flex;
-    align-items: center;
-    list-style-type: none;
-}
-#header #nav li {
-    padding: 0 18px;
-    font-size: 15px;
-}
-
-#container {
-    align-content: center;
-}
-
-#main {
-    width: 1000px;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px auto;
-}
-
-#main-div {
-    width: 694px;
-    border: 1px;
-    background-color: #ffffff;
-}
-
-#side-div {
-    display: block;
-    width: 296px;
-    border: 1px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 </style>

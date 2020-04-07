@@ -1,8 +1,13 @@
 <template>
 <div>
-    <article class="Card MainColumnCard" v-for="info in articleInfos" :key="info">
-        <a :href="'/article/' + info.id"><h1>{{info.title}}</h1></a>
-        <a :href="'/article/' + info.id"><p>{{info.summary}}</p></a>
+    <article class="MainColumnCard Card ArticleCard" v-for="info in articleInfos" :key="info">
+        <h1 class="title">
+            <a :href="'/article/' + info.id">{{info.title}}</a>
+        </h1>
+        <p class="summary">
+            {{info.summary}}
+        </p>
+        </ul>
     </article>   
 </div>
 </template>

@@ -1,8 +1,11 @@
 <template>
-<div>
-    <div class="article" v-html="articleContent">
-    </div>
-</div>
+    <article class="Card ArticleCard">
+        <div class="title">
+            {{article.title}}
+        </div>
+        <div v-html="articleContent">
+        </div>
+    </article>
 </template>
 
 <script>
@@ -18,12 +21,11 @@ export default {
     },
     computed: {
         articleContent: function() {
-            return this.convertMD(this.article.content)
+            return this.convertMD(this.article.artContent.content)
         }
     }
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>

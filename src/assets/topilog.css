@@ -1,0 +1,162 @@
+/*---------------------  
+        全站样式
+---------------------*/
+:root{
+    --background-bg-color: #f6f6f6;
+    --foreground-bg-color: #ffffff;
+}
+
+html {
+    height: 100%;
+}
+body {
+    background-color: var(--background-bg-color);
+    font-size: 15px;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 2;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+/* 网站内容 */
+.Container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 主栏 */
+.MainColumn {
+    border: 1px;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* 侧栏 */
+.SideColumn {
+    display: block;
+    border: 1px;
+    margin-top: 15px;
+}
+
+/* 卡片 */
+.Card {
+    background: var(--foreground-bg-color);
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+@media (min-width: 1200px) {
+    .Container {
+        max-width: 1000px;
+    }
+    .MainColumn {
+        width: 66.66667%;
+    }
+    .SideColumn {
+        width: 33.33332%;
+    }
+}
+
+@media (max-width: 768px) {
+    .Container {
+        padding: 0;
+        width: 100%;
+    }
+    .MainColumn {
+        width: 100%;
+    }
+    .SideColumn {
+        visibility: hidden;
+        width: 0;
+    }
+}
+
+/*---------------------  
+        文章样式
+---------------------*/
+.ArticleCard {
+    padding: 0;
+    margin-top: 15px;
+}
+.ArticleCard .title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    border-left: 2px solid #007fff;
+    border-bottom: 1px solid hsla(0, 0%, 59%, .1);
+}
+.ArticleCard .summary {
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.ArticleCard .meta {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.meta li {
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding-left: 12px;
+    line-height: 1.6;
+    border-left: 1px solid #EEE;
+}
+.meta li:first-child {
+    border: none;
+}
+
+/*---------------------  
+        侧边栏样式
+---------------------*/
+.SideCard {
+    padding: 0;
+    margin-top: 5;
+}
+
+.SideCard li {
+    list-style: none;
+}
+
+.SideCard .title {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid hsla(0, 0%, 59%, .1);
+}

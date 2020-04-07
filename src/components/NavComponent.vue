@@ -1,6 +1,6 @@
 <template>
 <div>
-    <nav id="nav">
+    <nav class="nav">
         <ul>
             <li v-for="(item,index) in items" :key="index">
                 <a :href="item.navigateToUrl">{{item.title}}</a>
@@ -22,6 +22,16 @@ export default {
 
 </script>
 
-<style>
-
+<style scoped>
+.nav ul{
+    height: 52px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+.nav li {
+    padding: 0 18px;
+    font-size: 16px;
+}
 </style>
