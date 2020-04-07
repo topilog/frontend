@@ -7,7 +7,6 @@
         <p class="summary">
             {{info.summary}}
         </p>
-        </ul>
     </article>   
 </div>
 </template>
